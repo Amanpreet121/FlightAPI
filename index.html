@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flight API</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Container for main form for adding values -->
+    <section>
+        <div class="container home_container">
+            <h1>Book Domestic &amp; International Flight</h1>
+            <form class="book_form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="source">Source</label>
+                        <input type="text" class="form-control" id="source" placeholder="Eg.CPH,DEL,LON">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="desti">Destination</label>
+                        <input type="text" class="form-control" id="desti" placeholder="Eg.CPH,DEL,LON">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="depdt">Date Of Departure</label>
+                        <input type="date" class="form-control" id="depdt" placeholder="Choose Date">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="seatclass">Class</label>
+                        <select id="seatclass" class="form-control">
+                            <option value='E'>Economy</option>
+                            <option value='B'>Buisness</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="adultsno">NO. Of Travellers</label>
+                        <select id="adultsno" class="form-control">
+                            <option>Traveller(s)</option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            <option value='7'>7</option>
+                            <option value='8'>8</option>
+                            <option value='9'>9</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <button id="search" class="btn button1 col-md-2">Get Set Go</button>
+
+                </div>
+                <div id="errmessage"></div>
+                <!--A block for displaying error messages if any of the field is missing to enter-->
+            </form>
+        </div>
+    </section>
+    <!-- A container for displaying Results in table format and also for displaying total results-->
+    <div class="container number" id="results"></div>
+
+    <section>
+        <div class="container table_container">
+            <table class="table" id="flight_info">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Airline Name</th>
+                        <th scope="col">Departure Time</th>
+                        <th scope="col">Arrival Time</th>
+                        <th scope="col">Stops</th>
+                        <th scope="col">Total Fare</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody id="flight_body">
+
+                </tbody>
+
+            </table>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
