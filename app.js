@@ -14,7 +14,8 @@ $(function () { //Document Ready function.....
         var mm = (date.getMonth() + 1).toString();
         var yy = (date.getFullYear()).toString();
 
-        var depdt = yy + mm + dd;
+        var depdt = yy + mm + dd; //Got date in YYYYMMDD form
+        
         //  console.log(depdt);
 
         // Section for Displaying Errors if any of the Input Missing
