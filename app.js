@@ -68,7 +68,7 @@ $(function () { //Document Ready function.....
         var src1 = $('#source').val();
         $.getJSON("airports.json", function (responseTxt) {
             for (var i = 0; i < responseTxt.length; i++) {
-                if (responseTxt[i].city === src1) {
+                if (responseTxt[i].city.toUpperCase() === src1.toUpperCase()) {
                     $('#source').val(responseTxt[i].code);
                     return;
                 }
