@@ -80,7 +80,7 @@ $(function () { //Document Ready function.....
         var src1 = $('#desti').val();
         $.getJSON("airports.json", function (responseTxt) {
             for (var i = 0; i < responseTxt.length; i++) {
-                if (responseTxt[i].city === src1) {
+                if (responseTxt[i].city.toUpperCase() === src1.toUpperCase()) {
                     $('#desti').val(responseTxt[i].code);
                     return;
                 }
