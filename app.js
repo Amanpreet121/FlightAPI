@@ -9,7 +9,8 @@ $(function () { //Document Ready function.....
         var seatclass = $('#seatclass').val();
         var adultsno = $('#adultsno').val();
 
-        var date = new Date($('#depdt').val());  //Converting Date format into string to match with query string of API
+        var date = new Date($('#depdt').val()); 
+        console.log(date); //Converting Date format into string to match with query string of API
         var dd = (date.getDate()).toString();     //Accessing DAy,Month Year For the dates
         var mm = (date.getMonth() + 1).toString();
         var yy = (date.getFullYear()).toString();
@@ -112,7 +113,7 @@ $(function () { //Document Ready function.....
             }
 
             $("#results").html(`Total Flights :${value.onwardflights.length}`);   //Total No. Of Results to be displayed
-            $("#flight_body").append(flight_data);  // Appending Data To the Table For Showing Values
+            $("#flight_body").html(flight_data);  // showing Data To the Table For Showing Values
 
             $(".my_button").on('click', function () { //on Clicking BookButton Msg To be Displayed Using Sweet Alert
                 swal({
